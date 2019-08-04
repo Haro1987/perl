@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+# chap05ex2.pl
+
+use warnings;
+use strict;
+
+my %phonenumbers = (
+    Chris  => '821–1111',
+    Cliff   => '333–0011',
+    Alicia => '455–8989',
+    Mary  => '221–5553'
+);
+
+print "enter name: ";
+while (<STDIN>) {
+    chomp;
+    if (exists $phonenumbers{$_}) {
+        print "$_ has the phone number: $phonenumbers{$_}\n";
+    } else {
+        print "$_ is not in the phone book\n";
+    }
+    print "enter name: ";
+}
